@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Range slider</title>
+    <script src="slider.js"></script>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+  <div class="slidecontainer">
+    <input type="range" min="1" max="3000" value="50" class="slider" id="myRange"  oninput="sliderChange(this.value)">
+    <p class="num">Units : <span id="demo"></span></p>
+    <p class="num1">Bill Amount : <span id="demo1"></span></p>
+  </div>
+  <script>
+  var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+function sliderChange(val)
+        {
+            if(document.getElementById('myRange').value!=""){
+            var demo = document.getElementById("myRange").value;
+            var amount = 0;
+            if (units<=100)
+            {
+                var amount=0;
+                amount=0;
+            }
+            else if (units<=200)
+            {
+                var amount= (100*0)+(units-100)*1.5;
+                 amount= (100*0)+(units-100)*1.5;
+            }
+            else if (units<=500)
+            {
+                var amount= (100*0)+(100*2)+(300*3)+(units-500)*3;
+                 amount= (100*0)+(100*2)+(300*3)+(units-500)*3;
+            }
+            else if (units>500)
+            {
+                var amount=(100*0)+(100*3.5)+(300*4.6)+(units-500)*6.6;
+                 amount=(100*0)+(100*3.5)+(300*4.6)+(units-500)*6.6;
+            }
+            else
+            {
+                document.getElementById("demo").innerHTML=0;
+            }
+            document.getElementById("demo").innerHTML = "";
+            document.getElementById("demo1").innerHTML=amount.value;
+          }
+        }
+  </script>
+  </body>
+  </html>
